@@ -2,83 +2,62 @@
 
 namespace App\Http\Controllers;
 
+use App\Nurse;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class NurseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $nurses = Nurse::all();
+        return view('nurses.index',compact('nurses'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('nurses.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+    //    dd($request->all());
+        $nurse = new Nurse;
+        $nurse->health_center_id = $request->health_center_id;
+        $nurse->first_name  = $request->first_name;
+        $nurse->last_name = $request->last_name;
+        $nurse->gender  = $request->gender;
+        $nurse->contact = $request->contact;
+        $nurse->address = $request->address;
+        $nurse->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Nurse $nurse)
     {
-        //
+        return view('nurses.edit', compact('nurse'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Nurse $nurse)
     {
-        //
+        return view('nurses.edit', compact('nurse'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Nurse $nurse)
     {
-        //
+        $nurse->health_center_id = $request->health_center_id;
+        $nurse->first_name  = $request->first_name;
+        $nurse->last_name = $request->last_name;
+        $nurse->gender  = $request->gender;
+        $nurse->contact = $request->contact;
+        $nurse->address = $request->address;
+        $nurse->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(Nurse $nurse)
     {
-        //
+        $nurse->delete();
     }
 }

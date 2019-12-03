@@ -2,83 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Drug;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DrugController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $drugs = Drug::all();
+        return view('drugs.index', compact('drugs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('drugs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $drug = new Drug;
+        $drug->health_center_id = $request->health_center_id;
+        $drug->name  = $request->name;
+        $drug->quantity = $request->quantity;
+        $drug->expiry_date  = $request->expiry_date;
+        $drug->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Drug $drug)
     {
-        //
+        return view('drugs.edit', compact('drug'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Drug $drug)
     {
-        //
+        return view('drugs.edit', compact('drug'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Drug $drug)
     {
-        //
+        $drug->health_center_id = $request->health_center_id;
+        $drug->name  = $request->name;
+        $drug->quantity = $request->quantity;
+        $drug->expiry_date  = $request->expiry_date;
+        $drug->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function destroy(Drug $drug)
     {
-        //
+        $drug->delete();
     }
 }

@@ -24,3 +24,7 @@ Route::get('/', function () {
 	Route::resource('healthcenters', 'HealthCenterController');
 
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
