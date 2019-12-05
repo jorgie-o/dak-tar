@@ -41,7 +41,6 @@
                     <!-- Start content -->
                     <div class="content">
                         <div class="mt-3">
-                            @include('flash::message')
                         </div>
                         <div class="container-fluid">
                             @yield('content')

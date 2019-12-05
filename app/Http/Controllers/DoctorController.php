@@ -38,7 +38,7 @@ class DoctorController extends Controller
         return view('doctors.edit', compact('doctor'));
     }
 
-    public function edit((Doctor $doctor)
+    public function edit(Doctor $doctor)
     {
         return view('doctors.edit', compact('doctor'));
     }
