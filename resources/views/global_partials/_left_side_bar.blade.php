@@ -16,14 +16,29 @@
                     <a href="/nurses" class="waves-effect"><i class="mdi mdi-bell-outline notification"></i> <span> Nurses</span> </a>
                 </li>
                 <li>
+                    <a href="/patients" class="waves-effect"><i class="mdi mdi-bell-outline notification"></i> <span> Patients</span> </a>
+                </li>
+                <li>
                     <a href="/drugs" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Drugs</span> </a>
                 </li>
 
                 <li>
-                    <a href="/medication" class="waves-effect"><i class="mdi mdi-view-list"></i> <span> Medication</span> </a>
+                    <a href="/medication" class="waves-effect"><i class="mdi mdi-view-list"></i> <span> Services </span> </a>
                 </li>
                 <li>
                     <a href="/departments" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Departments </span> </a>
+                </li>
+                <li>
+                    <a href="/labaratories" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Labartory </span> </a>
+                </li>
+                <li>
+                    <a href="/labaratories" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Diagnosis </span> </a>
+                </li>
+                <li>
+                    <a href="/labaratories" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Pharmacy </span> </a>
+                </li>
+                <li>
+                    <a href="/Pharmacies" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Departments </span> </a>
                 </li>
             </ul>
             <div class="clearfix"></div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrugsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateDrugsTable extends Migration
      */
     public function up()
     {
-        Schema::create('drugs', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('health_center_id')->unsigned()->index();
             $table->string('name');
-            $table->bigInteger('quantity');
-            $table->string('unit_of_measrement');
-            $table->bigInteger('price');
-            $table->date('expiry_date');
+            $table->bigInteger("price");
             $table->timestamps();
-
-            // $table->foreign('health_center_id')->references('id')->on('health_centers');
         });
     }
 
@@ -34,6 +29,6 @@ class CreateDrugsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drugs');
+        Schema::dropIfExists('services');
     }
 }

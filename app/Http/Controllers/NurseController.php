@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Nurse;
+use Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,13 +25,15 @@ class NurseController extends Controller
     {
     //    dd($request->all());
         $nurse = new Nurse;
-        $nurse->health_center_id = $request->health_center_id;
+        $nurse->health_center_id = 1;
         $nurse->first_name  = $request->first_name;
         $nurse->last_name = $request->last_name;
         $nurse->gender  = $request->gender;
         $nurse->contact = $request->contact;
         $nurse->address = $request->address;
         $nurse->save();
+        Session::flash('success', 'Nurse successfully created');
+        return redirect()->route('nurses.index');
     }
 
     public function show(Nurse $nurse)

@@ -1,26 +1,39 @@
 
 @extends('layouts.app')
 @section('page-header')
-doctors
+Nurses
 @endsection
 @section('content')
 
 <div class="row">
     <div class="col-12">
         <div class="card-box table-responsive">
-            <h3 class="m-t-0">Nurses</h3>
-            </p>
+             @include('global_partials.flash-messages')
+            <h3 class="m-t-10">Nurses</h3>
+             <a  type="submit"
+             href="/nurses/create"
+                 class="btn btn-primary waves-effect waves-light">
+                        Create nurse
+             </a>
             <table id="datatable-buttons" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Nurse Name</th>
+                        <th>gender</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Created</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                	@foreach($nurses as $nurses)
+                	@foreach($nurses as $nurse)
                     <tr>                   	
-                        <td>{{ $nurses->first_name }} {{ $nurses->last_name }}</td>
+                        <td>{{ $nurse->first_name }} {{ $nurse->last_name }}</td>
+                        <td>{{ $nurse->gender }}</td>
+                        <td>{{ $nurse->contact }}</td>
+                        <td>{{ $nurse->address }}</td>
+                        <td>{{ $nurse->created_at }}</td>
                     </tr>
                      @endforeach
                 </tbody>
