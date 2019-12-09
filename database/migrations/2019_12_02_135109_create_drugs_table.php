@@ -18,7 +18,7 @@ class CreateDrugsTable extends Migration
             $table->bigInteger('health_center_id')->unsigned()->index();
             $table->string('name');
             $table->bigInteger('quantity');
-            $table->string('unit_of_measrement');
+            $table->string('unit_of_measurement');
             $table->bigInteger('price');
             $table->date('expiry_date');
             $table->timestamps();

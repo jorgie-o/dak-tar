@@ -4,6 +4,13 @@
 	 directed to the opd where the doctor clucks the patient and send the patient to the lab or to
 	 the pharmacy where they are given drugs and discharge
 
+- [] the patient comes to the hospital and the record are taken from the reception, the patient is then given an id and goes to the opd for doctor's diagnosis, the doctors enters the patient 
+	id and gets the patient detaisl entered from the reception, the doctor then diagnosises the patient against a disease, if the patient requires a test, the doctors send the patien to the labaratory,
+	in the labaratory, the nurse enters the patient id, to seed the patient details and what test the doctor ask to be done, the nurses then tests the patient then record the labaratory results and send the patient back to the doctor, the doctor then enters the patient id to retrieve the patient detials including the test results and finally diagnosis the patient against a disease the sends the patient to the 
+	pharmacy. If the patient does not require test, the doctor diagnosises the patient and sends the patient to the pharmcy for the drugs to be given, the pharmaciest then dispenses the prescribe drug to the patient
+
+	At this point. the drugs quantity reduces in stock. 
+
 ### app story map
 - [] Health centers signs up for the app and are managed by daktar administrator
 - [] Health center manages their doctors

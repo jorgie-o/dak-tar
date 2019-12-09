@@ -28,7 +28,7 @@ class DrugController extends Controller
         $drug->name  = $request->name;
         $drug->quantity = $request->quantity;
         $drug->expiry_date  = $request->expiry_date;
-        $drug->unit_of_measrement = $request->unit;
+        $drug->unit_of_measurement = $request->unit;
         $drug->price = $request->price;
         $drug->save();
         Session::flash('success', 'Drug successfully created');
@@ -48,10 +48,12 @@ class DrugController extends Controller
 
     public function update(Request $request, Drug $drug)
     {
-        $drug->health_center_id = $request->health_center_id;
+        $drug->health_center_id = 1;
         $drug->name  = $request->name;
         $drug->quantity = $request->quantity;
         $drug->expiry_date  = $request->expiry_date;
+        $drug->unit_of_measurement = $request->unit;
+        $drug->price = $request->price;
         $drug->save();
     }
 
