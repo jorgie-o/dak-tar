@@ -8,8 +8,13 @@ Departments
 <div class="row">
     <div class="col-12">
         <div class="card-box table-responsive">
-            <h3 class="m-t-0">Departments</h3>
-            </p>
+          @include('global_partials.flash-messages')
+            <h3 class="m-t-10">Departments</h3>
+             <a
+             href="/departments/create"
+                 class="btn btn-primary waves-effect waves-light">
+                        Create department
+             </a>
             <table id="datatable-buttons" class="table table-bordered">
                 <thead>
                     <tr>

@@ -21,24 +21,17 @@
                 <li>
                     <a href="/drugs" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Drugs</span> </a>
                 </li>
-
                 <li>
-                    <a href="/medication" class="waves-effect"><i class="mdi mdi-view-list"></i> <span> Services </span> </a>
+                    <a href="/opds" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Opd </span> </a>
                 </li>
                 <li>
                     <a href="/departments" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Departments </span> </a>
                 </li>
                 <li>
-                    <a href="/labaratories" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Labartory </span> </a>
+                    <a href="/labs" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Labaratory </span> </a>
                 </li>
                 <li>
-                    <a href="/labaratories" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Diagnosis </span> </a>
-                </li>
-                <li>
-                    <a href="/labaratories" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Pharmacy </span> </a>
-                </li>
-                <li>
-                    <a href="/Pharmacies" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Departments </span> </a>
+                    <a href="/pharmacies" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Pharmacy </span> </a>
                 </li>
             </ul>
             <div class="clearfix"></div>

@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('page-header')
-doctors
+OPD
 @endsection
 @section('content')
 
@@ -9,31 +9,31 @@ doctors
     <div class="col-12">
         <div class="card-box table-responsive">
              @include('global_partials.flash-messages')
-            <h3 class="m-t-10">Doctors</h3>
+            <h3 class="m-t-10">Diagnosis</h3>
              <a
-             href="/doctors/create"
+             href="/opds/create"
                  class="btn btn-primary waves-effect waves-light">
-                        Create doctor
+                        Create diagnosis
              </a>
             <table id="datatable-buttons" class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Doctor Name</th>
-                        <th>gender</th>
-                        <th>Contact</th>
-                        <th>Address</th>
+                        <th>Patient Name</th>
+                        <th>healness</th>
+                        <th>Test to performed</th>
+                        <th>Pescription</th>
                         <th>Created</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                	@foreach($doctors as $doctor)
+                	@foreach($opds as $opd)
                     <tr>                   	
-                        <td>{{ $doctor->first_name }} {{ $doctor->last_name }}</td>
-                        <td>{{ $doctor->gender }}</td>
-                        <td>{{ $doctor->contact }}</td>
-                        <td>{{ $doctor->address }}</td>
-                        <td>{{ $doctor->created_at }}</td>
+                    <td>{{ $opd->patient->name }}</td>
+                        <td>{{ $opd->healness }}</td>
+                        <td>{{ $opd->lab_results }}</td>
+                        <td>{{ $opd->prescription }}</td>
+                        <td>{{ $opd->created_at }}</td>
                     </tr>
                      @endforeach
                 </tbody>

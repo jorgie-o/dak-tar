@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Patient;
 use Session;
 use Illuminate\Http\Request;
+use App\Http\Resources\Patient as PatientResource;
 use App\Http\Controllers\Controller;
 
 class PatientController extends Controller
@@ -65,5 +66,11 @@ class PatientController extends Controller
     public function destroy(Patient $patient)
     {
         $patient->delete();
+    }
+
+    public function getPatient($id)
+    {
+        $patient = Patient::where('id', $id)->first();
+        return response()->json(new PatientResource($patient));
     }
 }

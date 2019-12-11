@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use Session;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -22,9 +23,11 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         $department = new Department;
-        $department->health_center_id = $request->health_center_id;
+        $department->health_center_id = 1;
         $department->name  = $request->name;
         $department->save();
+        Session::flash('success', 'Departments successfully created');
+        return redirect()->route('departments.index');
     }
 
     public function show(Department $department)

@@ -10,14 +10,15 @@ Patients
         <div class="card-box table-responsive">
               @include('global_partials.flash-messages')
             <h3 class="m-t-10">Patients</h3>
-             <a  type="submit"
+             <a
              href="/patients/create"
-                 class="btn btn-primary waves-efdfect waves-light">
+                 class="btn btn-primary waves-efdfect waves-light m-b-15">
                         Create patient
              </a>
             <table id="datatable-buttons" class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Patient Id</th>
                         <th>First name</th>
                         <th>Last name</th>
                         <th>gender</th>
@@ -30,9 +31,10 @@ Patients
 
                 <tbody>
                 	@foreach($patients as $patient)
-                    <tr>                   	
+                    <tr>   
+                        <th>{{ $patient->id}}</th>                	
                         <td>{{ $patient->first_name }}</td>
-                        <td {{ $patient->last_name }}</td>
+                        <td> {{ $patient->last_name }}</td>
                         <td>{{ $patient->gender }}</td>
                         <td>{{ $patient->contact }}</td>
                         <td>{{ $patient->address }}</td>

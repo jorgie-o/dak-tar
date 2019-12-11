@@ -17,8 +17,7 @@ class CreateLabaratoriesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('health_center_id')->unsigned()->index();
             $table->bigInteger('patient_id')->unsigned()->index();
-            $table->bigInteger('doctor_id')->unsigned()->index();
-            $table->bigInteger('labtest_id')->unsigned()->index();
+            $table->bigInteger('opd_id')->unsigned()->index();
             $table->text('test_result');
             $table->timestamps();
         });

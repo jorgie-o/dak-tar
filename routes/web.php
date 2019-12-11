@@ -22,8 +22,19 @@ Route::get('/', function () {
 	Route::resource('departments', 'DepartmentController');
 	Route::resource('nurses', 'NurseController');
 	Route::resource('healthcenters', 'HealthCenterController');
+	Route::resource('opds', 'OpdController');
+	Route::resource('labs', 'LabaratoryController');
+	Route::resource('pharmacies', 'PharmacyController');
 
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

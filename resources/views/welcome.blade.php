@@ -2,7 +2,6 @@
 <html>
     <head>
         @include('global_partials._head')
-
     </head>
 
     <body>

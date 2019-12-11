@@ -17,11 +17,7 @@ class CreatePharamciesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('health_center_id')->unsigned()->index();
             $table->bigInteger('patient_id')->unsigned()->index();
-            $table->bigInteger('doctor_id')->unsigned()->index();
-            $table->string('diagnosis_name');
-            $table->string('drug_name');
-            $table->text('prescription');
-            $table->bigInteger("quantity_out");
+            $table->string('dispenses');
             $table->timestamps();
         });
     }

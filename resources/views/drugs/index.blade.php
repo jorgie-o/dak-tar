@@ -10,7 +10,7 @@ Drugs
         <div class="card-box table-responsive">
              @include('global_partials.flash-messages')
             <h3 class="m-t-10">Drugs</h3>
-             <a  type="submit"
+             <a
              href="/drugs/create"
                  class="btn btn-primary waves-effect waves-light">
                         Create drug

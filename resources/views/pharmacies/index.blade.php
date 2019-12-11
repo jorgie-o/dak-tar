@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('page-header')
-doctors
+Pharmacy
 @endsection
 @section('content')
 
@@ -9,31 +9,29 @@ doctors
     <div class="col-12">
         <div class="card-box table-responsive">
              @include('global_partials.flash-messages')
-            <h3 class="m-t-10">Doctors</h3>
+            <h3 class="m-t-10">Drug dispenses</h3>
              <a
-             href="/doctors/create"
-                 class="btn btn-primary waves-effect waves-light">
-                        Create doctor
+             href="/pharmacies/create"
+                 class="btn btn-primary waves-effect waves-light m-b-15">
+                        Create new dispense
              </a>
             <table id="datatable-buttons" class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Doctor Name</th>
-                        <th>gender</th>
-                        <th>Contact</th>
-                        <th>Address</th>
+                        <th>Patient Name</th>
+                        <th>Disease</th>
+                        <th>Dispenses</th>
                         <th>Created</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                	@foreach($doctors as $doctor)
+                	@foreach($pharmacies as $pharmacie)
                     <tr>                   	
-                        <td>{{ $doctor->first_name }} {{ $doctor->last_name }}</td>
-                        <td>{{ $doctor->gender }}</td>
-                        <td>{{ $doctor->contact }}</td>
-                        <td>{{ $doctor->address }}</td>
-                        <td>{{ $doctor->created_at }}</td>
+                        <td>{{ $pharmacie->patient->name }}</td>
+                        <td>{{ $pharmacie->opd->healness }}</td>
+                        <td>{{ $pharmacie->dispenses }}</td>
+                        <td>{{ $pharmacie->created_at }}</td>
                     </tr>
                      @endforeach
                 </tbody>
