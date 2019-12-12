@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Patient;
+use App\Pharmacy;
 use App\Labaratory;
 use Illuminate\Database\Eloquent\Model;
 

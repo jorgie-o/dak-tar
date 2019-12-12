@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Pharamcy;
+use App\Pharmacy;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,7 +10,7 @@ class PharmacyController extends Controller
 {
     public function index()
     {
-        $pharmacies = Pharamcy::all();
+        $pharmacies = Pharmacy::all();
         return view('pharmacies.index', compact('pharmacies'));
     }
 
@@ -21,7 +21,7 @@ class PharmacyController extends Controller
 
     public function store(Request $request)
     {
-        $phar = new Pharamcy();
+        $phar = new Pharmacy();
         $phar->health_center_id = 1;
         $phar->patient_id = $request->patient_id;
         $phar->dispenses  = $request->dispenses;

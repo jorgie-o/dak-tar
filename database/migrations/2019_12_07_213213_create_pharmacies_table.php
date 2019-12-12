@@ -13,7 +13,7 @@ class CreatePharamciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pharamcies', function (Blueprint $table) {
+        Schema::create('pharmacies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('health_center_id')->unsigned()->index();
             $table->bigInteger('patient_id')->unsigned()->index();

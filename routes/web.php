@@ -25,6 +25,7 @@ Route::get('/', function () {
 	Route::resource('opds', 'OpdController');
 	Route::resource('labs', 'LabaratoryController');
 	Route::resource('pharmacies', 'PharmacyController');
+	Route::get('dashboard', 'DashboardController@getStats');
 
 // });
 

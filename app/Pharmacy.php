@@ -6,7 +6,7 @@ use App\Opd;
 use App\Patient;
 use Illuminate\Database\Eloquent\Model;
 
-class Pharamcy extends Model
+class Pharmacy extends Model
 {
     public function patient()
     {
